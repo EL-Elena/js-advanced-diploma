@@ -22,8 +22,36 @@
  * calcTileType(7, 7); // 'left'
  * ```
  * */
+
 export function calcTileType(index, boardSize) {
   // TODO: ваш код будет тут
+  const leftArr = [8, 16, 24, 32, 40, 48];
+  const rightArr = [15, 23, 31, 39, 47, 55];
+
+  if (leftArr.includes(index)) {
+    return 'left';
+  }
+  if (rightArr.includes(index)) {
+    return 'right';
+  }
+  if (index > 0 && index < 7) {
+    return 'top';
+  }
+  if (index > 56 && index < 63) {
+    return 'bottom';
+  }
+  if (index === 0) {
+    return 'top-left';
+  }
+  if (index === 7) {
+    return 'top-right';
+  }
+  if (index === 56) {
+    return 'bottom-left';
+  }
+  if (index === 63) {
+    return 'bottom-right';
+  }
   return 'center';
 }
 

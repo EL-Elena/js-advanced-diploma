@@ -12,5 +12,7 @@
  * ```
  * */
 export default class Team {
-  // TODO: write your logic here
+  constructor([...args]) {
+    this.characters = [...args];
+  }
 }
